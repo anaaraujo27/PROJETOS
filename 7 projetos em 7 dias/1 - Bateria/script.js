@@ -4,7 +4,12 @@ document.body.addEventListener('keyup', (event) => {
 })
 
 document.querySelector('.composer button').addEventListener('click', () => {
-    let song = document.getElementById('input')
+    let song = document.querySelector('#input').value
+
+    if (song !== '') {
+        let songArray = song.split('')
+        playcomposition(songArray)
+    }
 })
 
 function playSound(sound) {
@@ -22,5 +27,11 @@ function playSound(sound) {
         setTimeout( () => {
             keyElement.classList.remove('active')
         }, 300)
+    }
+}
+
+function playcomposition(songArray) {
+    for (let songItem of songArray) {
+        playSound(`key${songItem}`)
     }
 }
