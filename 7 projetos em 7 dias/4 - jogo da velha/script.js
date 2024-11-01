@@ -112,13 +112,7 @@ function checkWinnerFor(player) {
 
     for (let w in pos) {
         let pArray = pos[w].split(',')
-        pArray.every((option) => {
-            if (square[option === player]) {
-                return true
-            } else {
-                return false
-            }
-        })
+        let hasWon = pArray.every(option=>square[option] === player)
     }
 }
 
