@@ -29,7 +29,7 @@ document.querySelectorAll('.item').forEach(item => {
 
 function itemClick(event) {
     let item = event.target.getAttribute('data-item')
-    if(square[item] === ''){
+    if(playing && square[item] === ''){
         square[item] = player;
         renderSquare()
         togglePlayer()
@@ -113,7 +113,18 @@ function checkWinnerFor(player) {
     for (let w in pos) {
         let pArray = pos[w].split(',')
         let hasWon = pArray.every(option=>square[option] === player)
-    }
+        if(hasWon) {
+            return true;
+        }
+    } 
+
+    return false
 }
 
-function isFull() {}
+function isFull() {
+    for(let i in square) {
+        if(square[i] === '') {
+            return false;
+        }
+    } return true
+}
