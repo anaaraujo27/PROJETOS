@@ -93,7 +93,7 @@ function checkGame() {
     } else if (isFull()) {
         warning = 'Deu empate'
         playing = false
-    }   
+   
 }
 
 function checkWinnerFor(player) {
