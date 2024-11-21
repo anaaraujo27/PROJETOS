@@ -92,7 +92,7 @@ function checkGame() {
         playing = false
     } else if (isFull()) {
         warning = 'Deu empate'
-        playing = false
+        playing = false}
    
 }
 

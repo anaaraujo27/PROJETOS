@@ -1,4 +1,4 @@
-document.querySelector('.busca').addEventListener('submit', (event)=> {
+document.querySelector('.busca').addEventListener('submit', async (event)=> {
     event.preventDefault()
 
     let input = document.querySelector('#searchInput').value
@@ -9,6 +9,7 @@ document.querySelector('.busca').addEventListener('submit', (event)=> {
         showWarning('Carregando...')
 
         let url = 'api.openweathermap.org/data/2.5/weader?q={city name}&appid={API key}'
+
     }
 })
 
